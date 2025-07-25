@@ -6,11 +6,13 @@ Web Scraping With Scrapy and MongoDB from RealPython
 - [Source code from RealPython](https://github.com/realpython/materials/tree/master/web-scraping-with-scrapy-and-mongodb/)
 - [Books to Scrape - Website for this exercise](https://books.toscrape.com)
 - [Inspect the Site Using Developer Tools](https://realpython.com/beautiful-soup-web-scraper-python/#inspect-the-site-using-developer-tools)
+- [Install MongoDB on MacOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
 
 # Initialise uv environment
 - uv init .
 - uv venv
 - uv add scrapy
+- uv add pymongo
 
 # Scrapy commands
 - help : scrapy
@@ -25,10 +27,18 @@ Web Scraping With Scrapy and MongoDB from RealPython
 - Crawl :
     - scrapy crawl book
 
-# Xpath & CSS used in this project 
-- Title / URL : 
-    - //*[@id="default"]/div/div/div/div/section/div[2]/ol/li[1]/article/h3/a
-    - body > div > div > div > div > section > div:nth-child(2) > ol > li:nth-child(1) > article > h3 > a
-- Price :
-    - //*[@id="default"]/div/div/div/div/section/div[2]/ol/li[1]/article/div[2]/p[1]
-    - body > div > div > div > div > section > div:nth-child(2) > ol > li:nth-child(1) > article > div.product_price > p.price_color
+# MongoDB Commands
+- Get version : mongod --version
+- Start service : 
+    - brew services start mongodb-community@8.0
+    - mongod --config /opt/homebrew/etc/mongod.conf
+- Start shell : mongosh
+- Some commands
+``` test> use books_db
+switched to db books_db
+books_db> db.createCollection("books")
+{ ok: 1 }
+books_db> show collections
+books
+books_db>
+```
