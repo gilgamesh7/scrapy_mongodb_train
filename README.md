@@ -25,6 +25,7 @@ Web Scraping With Scrapy and MongoDB from RealPython
     - cd books
     - scrapy genspider book https://books.toscrape.com/
 - Crawl :
+    - cd books
     - scrapy crawl book
 
 # MongoDB Commands

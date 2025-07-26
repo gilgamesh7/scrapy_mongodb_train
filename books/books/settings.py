@@ -12,6 +12,9 @@ BOT_NAME = "books"
 SPIDER_MODULES = ["books.spiders"]
 NEWSPIDER_MODULE = "books.spiders"
 
+MONGO_URI = "mongodb://localhost:27017"
+MONGO_DATABASE = "books_db"
+
 ADDONS = {}
 
 
@@ -46,9 +49,9 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
+# SPIDER_MIDDLEWARES = {
 #    "books.middlewares.BooksSpiderMiddleware": 543,
-#}
+# }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
@@ -64,9 +67,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "books.pipelines.BooksPipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "books.pipelines.MongoPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
