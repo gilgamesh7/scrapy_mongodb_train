@@ -42,4 +42,10 @@ books_db> db.createCollection("books")
 books_db> show collections
 books
 books_db>
+books_db> db.books.countDocuments()
+1000
+books_db> db.books.drop()
+true
+books_db> db.books.countDocuments()
+0
 ```
